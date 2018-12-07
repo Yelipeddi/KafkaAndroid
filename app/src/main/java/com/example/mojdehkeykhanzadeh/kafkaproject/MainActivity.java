@@ -58,8 +58,22 @@ private String topic3;
                 saveTopic3();
             }
         });
+        
+        Button btnGet = (Button) findViewById(R.id.buttonGet);
+            btnGet.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    openGetActivity();
+                }
+            });
 
     }
+    
+    public void openGetActivity() {
+            Intent intent = new Intent(this, GetActivity.class);
+            startActivity(intent);
+    }
+    
     public void saveTopic1(){
         String URL = "endpoint1";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
